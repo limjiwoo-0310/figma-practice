@@ -1,0 +1,170 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.footer-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-48);
+  padding: var(--spacing-40) var(--spacing-15);
+  font: var(--font-footer-meta);
+  letter-spacing: normal;
+  color: var(--color-text-title);
+}
+
+.footer-bar__left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-23);
+}
+
+.footer-bar__address {
+  font: var(--font-footer-body);
+  font-style: normal;
+}
+
+.footer-bar__call {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: flex-start;
+}
+
+.footer-bar__call-number {
+  position: relative;
+  flex: none;
+  font: var(--font-footer-body);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* 위아래 여백 안에서만 넓어져 다른 링크와 겹치지 않는다. 누르는 높이만 2.75rem(44px)이다. */
+.footer-bar__call-number::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: var(--size-touch-target);
+  content: '';
+  transform: translateY(-50%);
+}
+
+.footer-bar__call-note {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* 모바일에서는 링크마다 높이 2.75rem(44px)을 확보해 Figma보다 줄 간격이 넓다. */
+.footer-bar__terms {
+  display: flex;
+  flex-direction: column;
+  font: var(--font-footer-body);
+}
+
+.footer-bar__term {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  min-height: var(--size-touch-target);
+  color: var(--color-text-title);
+  text-decoration: none;
+}
+
+.footer-bar__terms li:first-child .footer-bar__term {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.footer-bar__right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-23);
+}
+
+.footer-bar__links,
+.footer-bar__info {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bar__info-link {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  min-height: var(--size-touch-target);
+  color: var(--color-text-title);
+  text-decoration: none;
+}
+
+.footer-bar__sns {
+  display: flex;
+  align-items: center;
+}
+
+/* 아이콘은 왼쪽에 붙이고, 누르는 영역만 2.75rem(44px)으로 넓힌다. */
+.footer-bar__sns-link {
+  display: flex;
+  align-items: center;
+  min-width: var(--size-touch-target);
+  min-height: var(--size-touch-target);
+}
+
+.footer-bar__sns-image {
+  width: var(--size-sns);
+  height: var(--size-sns);
+}
+
+.footer-bar__copyright {
+  font: var(--font-footer-body);
+}
+
+@media (min-width: 1280px) {
+  .footer-bar {
+    flex-direction: row;
+    gap: var(--spacing-46);
+    align-items: flex-end;
+    width: 100%;
+    max-width: var(--size-footer-max-width);
+    padding: 0;
+    margin-inline: auto;
+  }
+
+  .footer-bar__left {
+    flex: none;
+    width: var(--size-footer-left);
+  }
+
+  .footer-bar__call-note {
+    flex: none;
+    color: var(--color-text-subtitle);
+  }
+
+  .footer-bar__terms {
+    flex-direction: row;
+    gap: var(--spacing-16);
+  }
+
+  .footer-bar__term,
+  .footer-bar__info-link,
+  .footer-bar__sns-link {
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .footer-bar__right {
+    flex: none;
+    gap: var(--spacing-24);
+    width: var(--size-footer-right);
+  }
+
+  .footer-bar__links,
+  .footer-bar__info {
+    gap: var(--spacing-12);
+  }
+
+  .footer-bar__sns {
+    gap: var(--spacing-10);
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer-bar__info-link {
+    font: var(--font-footer-body);
+  }
+}

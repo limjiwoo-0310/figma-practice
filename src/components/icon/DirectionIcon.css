@@ -1,0 +1,13 @@
+.direction-icon {
+  flex: none;
+}
+
+.direction-icon--default {
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}
+
+.direction-icon--category {
+  width: var(--size-icon-category);
+  height: var(--size-icon-category);
+}

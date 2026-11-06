@@ -1,0 +1,128 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.calendar {
+  display: flex;
+  flex-direction: column;
+  padding-block: var(--spacing-24);
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-with-glass);
+}
+
+.calendar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-8) var(--spacing-16) var(--spacing-10);
+}
+
+.calendar__month {
+  display: flex;
+  gap: var(--spacing-4);
+  align-items: center;
+}
+
+.calendar__title {
+  font: var(--font-body-m-b);
+  letter-spacing: normal;
+  color: var(--color-text-title);
+}
+
+.calendar__month-icon.direction-icon--category {
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}
+
+.calendar__arrows {
+  display: flex;
+  gap: var(--spacing-24);
+}
+
+.calendar__arrow {
+  width: var(--size-calendar-chevron);
+  height: var(--size-calendar-chevron);
+  cursor: not-allowed;
+  border-top: calc(var(--border-width-default) * 2) solid var(--color-line);
+  border-left: calc(var(--border-width-default) * 2) solid var(--color-line);
+}
+
+.calendar__arrow--prev {
+  transform: rotate(-45deg);
+}
+
+.calendar__arrow--next {
+  transform: rotate(135deg);
+}
+
+.calendar__weekdays,
+.calendar__days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  padding-inline: var(--spacing-16);
+}
+
+.calendar__weekdays {
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-text-meta);
+  text-align: center;
+}
+
+.calendar__days {
+  row-gap: var(--spacing-6);
+  padding-top: var(--spacing-4);
+}
+
+.calendar__range {
+  align-self: center;
+  height: var(--size-calendar-today);
+  background-color: var(--color-b-200);
+  border-radius: calc(var(--size-calendar-today) / 2);
+}
+
+.calendar__day {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size-calendar-cell);
+  font: var(--font-calendar-day);
+  letter-spacing: var(--letter-spacing-calendar-day);
+  color: var(--color-text-title);
+}
+
+.calendar__today {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-calendar-today);
+  height: var(--size-calendar-today);
+  font: var(--font-calendar-day-today);
+  letter-spacing: 0;
+  color: var(--color-w-900);
+  background-color: var(--color-line);
+  border-radius: 50%;
+}
+
+.calendar__legend {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+  padding: var(--spacing-16) var(--spacing-20) 0;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-meta);
+}
+
+.calendar__legend-mark {
+  flex: none;
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+  background-color: var(--color-b-200);
+  border-radius: 50%;
+}
+
+@media (min-width: 1280px) {
+  .calendar__legend {
+    font-weight: var(--font-weight-bold);
+  }
+}

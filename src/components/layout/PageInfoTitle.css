@@ -1,0 +1,38 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.page-info-title {
+  display: flex;
+  gap: var(--spacing-16);
+  align-items: center;
+  padding: var(--spacing-20) var(--spacing-16);
+  background-color: var(--color-bg-page);
+}
+
+.page-info-title__back {
+  position: relative;
+  flex: none;
+}
+
+/* 보이는 크기는 Figma대로 두고, 누르는 영역만 2.75rem(44px)까지 넓힌다. */
+.page-info-title__back::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size-touch-target);
+  height: var(--size-touch-target);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.page-info-title__text {
+  font: var(--font-heading-h5);
+  color: var(--color-text-title);
+}
+
+/* 데스크탑에서는 회색 띠 없이 제목 위의 작은 줄로 쓴다. */
+@media (min-width: 1280px) {
+  .page-info-title {
+    gap: var(--spacing-8);
+    padding: 0;
+    background-color: transparent;
+  }
+}

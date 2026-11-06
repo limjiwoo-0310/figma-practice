@@ -1,0 +1,22 @@
+.popular-menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-button);
+  padding-inline: var(--spacing-8);
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-menu);
+}
+
+.popular-menu--active {
+  font: var(--font-body-m-b);
+  letter-spacing: normal;
+  color: var(--color-primary-hover);
+  border-bottom: var(--border-width-thick) solid var(--color-primary-hover);
+}
+
+.popular-menu--fill {
+  flex: 1 1 0;
+  min-width: 0;
+}

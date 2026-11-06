@@ -1,0 +1,143 @@
+/* 카드 높이는 고정이다. 긴 글은 제목 1줄, 설명 2줄, 키워드 1줄까지만 보여 준다. */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  overflow: hidden;
+  padding: var(--spacing-16) var(--spacing-20);
+  text-decoration: none;
+  border-radius: var(--radius-l);
+  box-shadow: var(--shadow-with-glass);
+  backdrop-filter: blur(var(--effect-glass-radius));
+}
+
+.card-item--mobile {
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  height: var(--size-card-mobile-height);
+}
+
+.card-item--desktop {
+  height: var(--size-card-desktop-height);
+}
+
+.card-item--service {
+  height: var(--size-card-service-height);
+}
+
+.card-item__image {
+  flex: none;
+  width: var(--size-card-image);
+  height: var(--size-card-image);
+}
+
+.card-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-item--service .card-item__image {
+  width: 100%;
+  height: var(--size-card-service-image-height);
+  overflow: hidden;
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-s);
+}
+
+.card-item--service .card-item__image img {
+  object-fit: cover;
+}
+
+.card-item__content {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-width: 0;
+  align-self: stretch;
+}
+
+/* 이 카드는 글자가 많아 Figma에서도 내용이 칸을 넘치므로, 겹치지 않게 간격을 둔다. */
+.card-item--service .card-item__content {
+  gap: var(--spacing-8);
+}
+
+.card-item__deadline {
+  display: flex;
+  flex: none;
+  gap: var(--spacing-6);
+  align-items: center;
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-text-meta);
+  white-space: nowrap;
+}
+
+.card-item__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-6);
+  width: 100%;
+  word-break: keep-all;
+}
+
+.card-item__title {
+  overflow: hidden;
+  font: var(--font-heading-h4);
+  letter-spacing: normal;
+  color: var(--color-primary-hover);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-item__description {
+  display: -webkit-box;
+  overflow: hidden;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-meta);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+/* 한 줄에 들어가지 않는 키워드는 다음 줄로 넘어가 통째로 가려진다. */
+.card-item__keywords {
+  display: flex;
+  flex: none;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  align-items: center;
+  max-width: 100%;
+  max-height: var(--size-card-keywords-height);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.card-item--mobile .card-item__description {
+  -webkit-line-clamp: 2;
+}
+
+@media (min-width: 1280px) {
+  .card-item__description {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+.card-item--desktop .card-item__keywords {
+  flex-wrap: nowrap;
+}
+
+.card-item--service .card-item__text {
+  word-break: normal;
+}
+
+.card-item--service .card-item__title {
+  display: -webkit-box;
+  white-space: normal;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}

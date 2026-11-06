@@ -1,0 +1,45 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.schedule-summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  padding: var(--spacing-20) var(--spacing-20) var(--spacing-20) var(--spacing-64);
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-border);
+}
+
+.schedule-summary__title {
+  font: var(--font-heading-h4);
+  color: var(--color-text-title);
+}
+
+.schedule-summary__period {
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-meta);
+}
+
+.schedule-summary__deadline {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-meta);
+}
+
+@media (min-width: 1280px) {
+  .schedule-summary {
+    padding: var(--spacing-20);
+  }
+
+  .schedule-summary__period {
+    font: var(--font-heading-h4);
+    letter-spacing: normal;
+  }
+
+  .schedule-summary__deadline {
+    font-weight: var(--font-weight-bold);
+  }
+}

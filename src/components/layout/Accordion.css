@@ -1,0 +1,27 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.accordion__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--size-touch-target);
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion__title::-webkit-details-marker {
+  display: none;
+}
+
+.accordion__icon {
+  transition: transform 0.2s ease;
+}
+
+.accordion[open] .accordion__icon {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__icon {
+    transition: none;
+  }
+}

@@ -1,0 +1,72 @@
+.chatbot-item {
+  display: inline-flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  text-decoration: none;
+}
+
+/* 안내 칸은 오른쪽 끝이 캐릭터 뒤로 들어간다. */
+.chatbot-item__guide {
+  display: flex;
+  flex: none;
+  align-items: center;
+  width: var(--size-chatbot-guide-closed);
+  height: var(--size-chatbot-guide-height);
+  margin-right: calc(var(--size-chatbot-guide-closed) * -1);
+  overflow: hidden;
+  padding-left: var(--spacing-6);
+  background-color: var(--color-b-200);
+  border-radius: calc(var(--size-chatbot-guide-height) / 2);
+}
+
+/* 접혀 있을 때는 보이지 않게만 해서, 화면 읽기 프로그램은 링크 이름으로 읽을 수 있다. */
+.chatbot-item__text {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-blue-900);
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.chatbot-item__image {
+  position: relative;
+  flex: none;
+  width: var(--size-chatbot-width);
+  height: var(--size-chatbot-height);
+  object-fit: cover;
+}
+
+.chatbot-item--open .chatbot-item__guide,
+.chatbot-item:focus-visible .chatbot-item__guide {
+  width: var(--size-chatbot-guide-open);
+}
+
+.chatbot-item--open .chatbot-item__text,
+.chatbot-item:focus-visible .chatbot-item__text {
+  opacity: 1;
+}
+
+/* 터치 화면은 누른 뒤 hover 상태가 남을 수 있어, 마우스를 쓰는 화면에만 적용한다. */
+@media (hover: hover) {
+  .chatbot-item:hover .chatbot-item__guide {
+    width: var(--size-chatbot-guide-open);
+  }
+
+  .chatbot-item:hover .chatbot-item__text {
+    opacity: 1;
+  }
+}
+
+.chatbot-item:focus-visible {
+  outline: var(--border-width-thick) solid var(--color-primary);
+  outline-offset: var(--border-width-default);
+}
+
+@media (min-width: 1280px) {
+  .chatbot-item__guide {
+    background-color: var(--color-b-300);
+  }
+}

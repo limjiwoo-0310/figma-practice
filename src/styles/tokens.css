@@ -1,0 +1,302 @@
+/*
+ * 디자인 토큰. 출처: Figma 파일 x10bbprRQlD7AvK97R4sdo, 메인_PC(17:6703)
+ * 값은 Figma 기준이며, 폰트 크기·행간·간격은 px을 16으로 나눈 rem이다 (예: 13px = 0.8125rem).
+ * 텍스트 컬렉션의 모바일/데스크탑 모드는 맨 아래 미디어쿼리로 나눈다.
+ */
+:root {
+  /* 컬러: 원시값 (원시값-색상) */
+  --color-w-900: #ffffff;
+  --color-g-50: #e9ebf8;
+  --color-g-100: #ececec;
+  --color-g-200: #c5c5c5;
+  --color-g-300: #505562;
+  --color-g-400: #696969;
+  --color-g-500: #444444;
+  --color-g-600: #3e3e3e;
+  --color-g-700: #303030;
+  --color-g-800: #282828;
+  --color-g-900: #1d1d1d;
+  --color-b-50: #fafdff;
+  --color-b-100: #f0faff;
+  --color-b-200: #b0d4e7;
+  --color-b-300: #c8e8ff;
+  --color-b-400: #b3d6ff;
+  --color-b-500: #0073b3;
+  --color-b-700: #005a8c;
+  --color-b-900: #003959;
+  --color-r-500: #cc3802;
+
+  /* 컬러: 의미값 (색상) */
+  --color-text-title: var(--color-g-900);
+  --color-text-subtitle: var(--color-g-700);
+  --color-text-body: var(--color-g-600);
+  --color-text-menu: var(--color-g-500);
+  --color-text-meta: var(--color-g-400);
+  --color-bg-page: var(--color-g-100);
+  --color-bg-surface: var(--color-g-50);
+  --color-bg-colored: var(--color-b-100);
+  --color-primary: var(--color-b-500);
+  --color-primary-hover: var(--color-b-700);
+  --color-line: var(--color-g-200);
+  --color-point: var(--color-r-500);
+
+  /* 컬러: 파일 밖 라이브러리 변수 (Figma 이름 boder 그대로) */
+  --color-boder: #c5c5c5;
+  --color-blue-900: #003675;
+
+  /* 컬러: 팝업 뒤 어두운 배경. Figma에 값이 없어 검정 50%로 정의 */
+  --color-dim: #00000080;
+
+  /* 컬러: 검색창 카테고리 글자. Figma에 변수 없이 검정으로 적혀 있음 */
+  --color-black: #000000;
+
+  /* 폰트 패밀리 */
+  --font-family-pretendard-gov: 'Pretendard GOV', sans-serif;
+
+  /* 폰트 크기: 원시값 (원시값-텍스트) */
+  --font-size-60: 3.75rem;
+  --font-size-44: 2.75rem;
+  --font-size-40: 2.5rem;
+  --font-size-36: 2.25rem;
+  --font-size-32: 2rem;
+  --font-size-28: 1.75rem;
+  --font-size-24: 1.5rem;
+  --font-size-22: 1.375rem;
+  --font-size-19: 1.1875rem;
+  --font-size-17: 1.0625rem;
+  --font-size-15: 0.9375rem;
+  --font-size-13: 0.8125rem;
+
+  /* 폰트 크기: 의미값 (텍스트, 모바일 모드) */
+  --font-size-display-l: var(--font-size-44);
+  --font-size-display-m: var(--font-size-32);
+  --font-size-display-s: var(--font-size-28);
+  --font-size-h1: var(--font-size-28);
+  --font-size-h2: var(--font-size-24);
+  --font-size-h3: var(--font-size-22);
+  --font-size-h4: var(--font-size-19);
+  --font-size-h5: var(--font-size-17);
+  --font-size-body-l: var(--font-size-19);
+  --font-size-body-m: var(--font-size-17);
+  --font-size-body-s: var(--font-size-15);
+  --font-size-footer: var(--font-size-13);
+
+  /* 폰트 크기: 푸터 약관 (라이브러리 스타일) */
+  --font-size-footer-terms: 0.6875rem;
+
+  /* 폰트 크기: 달력 날짜 */
+  --font-size-calendar-day: 1.25rem;
+
+  /* 폰트 굵기 */
+  --font-weight-700: 700;
+  --font-weight-500: 500;
+  --font-weight-400: 400;
+  --font-weight-bold: var(--font-weight-700);
+  --font-weight-medium: var(--font-weight-500);
+  --font-weight-regular: var(--font-weight-400);
+
+  /* 행간: Figma의 Auto(도구에는 100으로 표시됨)는 CSS의 normal */
+  --line-height-auto: normal;
+  --line-height-body-m: 1.59375rem;
+  --line-height-calendar-day: 1.5625rem;
+
+  /* 자간: Figma의 %는 글자 크기 기준 */
+  --letter-spacing-body-m: calc(var(--font-size-body-m) * -0.02);
+  --letter-spacing-body-s: calc(var(--font-size-body-s) * -0.07);
+  --letter-spacing-footer-terms: calc(var(--font-size-footer-terms) * -0.06);
+  --letter-spacing-calendar-day: -0.44999998807907104px;
+
+  /* 텍스트 스타일: font 속성에 그대로 쓰고, 자간은 위 토큰을 따로 적용 */
+  --font-display-l: var(--font-weight-bold) var(--font-size-display-l) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-display-m: var(--font-weight-bold) var(--font-size-display-m) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-display-s: var(--font-weight-bold) var(--font-size-display-s) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h1: var(--font-weight-bold) var(--font-size-h1) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h2: var(--font-weight-bold) var(--font-size-h2) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h3: var(--font-weight-bold) var(--font-size-h3) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h4: var(--font-weight-bold) var(--font-size-h4) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h4-default: var(--font-weight-500) var(--font-size-h4) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-heading-h5: var(--font-weight-bold) var(--font-size-h5) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-body-l: var(--font-weight-regular) var(--font-size-body-l) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-body-m-b: var(--font-weight-bold) var(--font-size-body-m) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-body-m: var(--font-weight-regular) var(--font-size-body-m) / var(--line-height-body-m) var(--font-family-pretendard-gov);
+  --font-body-s: var(--font-weight-regular) var(--font-size-body-s) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-footer-body: var(--font-weight-bold) var(--font-size-footer) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-footer-meta: var(--font-weight-regular) var(--font-size-footer) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  --font-footer-terms: var(--font-weight-700) var(--font-size-footer-terms) / var(--line-height-auto) var(--font-family-pretendard-gov);
+
+  /* 달력 날짜: Figma의 SF Pro를 Pretendard GOV로 교체. 오늘 표시 날짜만 Medium이고 자간 0 */
+  --font-calendar-day: var(--font-weight-bold) var(--font-size-calendar-day) / var(--line-height-calendar-day) var(--font-family-pretendard-gov);
+  --font-calendar-day-today: var(--font-weight-medium) var(--font-size-calendar-day) / var(--line-height-calendar-day) var(--font-family-pretendard-gov);
+
+  /* 간격: Figma에 변수가 없어 4회 이상 쓰인 값으로 정의. 이름의 숫자는 Figma px */
+  --spacing-4: 0.25rem;
+  --spacing-6: 0.375rem;
+  --spacing-8: 0.5rem;
+  --spacing-10: 0.625rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-32: 2rem;
+  --spacing-80: 5rem;
+
+  /* 간격: Figma에 변수가 없어 버튼 섹션(566:2882)의 값으로 정의 */
+  --spacing-3: 0.1875rem;
+  --spacing-30: 1.875rem;
+
+  /* 간격: Figma에 변수가 없어 헤더 섹션(566:2298)의 값으로 정의 */
+  --spacing-5: 0.3125rem;
+
+  /* 헤더 섹션(566:2298)의 크기: Figma에 변수가 없어 해당 노드의 값으로 정의 */
+  --size-search-category: 4.0625rem;
+  --size-search-divider: 2rem;
+  --size-icon-external: 1.25rem;
+  --size-icon-mini: 0.875rem;
+  --size-location-middle: 2.875rem;
+
+  /* 푸터바 섹션(566:2880)의 값: Figma에 변수가 없어 해당 노드의 값으로 정의 */
+  --spacing-15: 0.9375rem;
+  --spacing-23: 1.4375rem;
+  --spacing-40: 2.5rem;
+  --spacing-46: 2.875rem;
+  --spacing-48: 3rem;
+  --size-footer-max-width: 64.375rem;
+  --size-footer-left: 32.0625rem;
+  --size-footer-right: 29.4375rem;
+  --size-sns: 1.5625rem;
+
+  /* 버튼 높이: Figma에 변수가 없어 버튼의 44px, 48px, 32px로 정의 */
+  --size-button: 2.75rem;
+  --size-button-category: 3rem;
+  --size-button-small: 2rem;
+
+  /* 완성화면(17:6701) 레이아웃: Figma에 변수가 없어 해당 프레임의 값으로 정의 */
+  --size-skeleton-block: 5rem;
+  --spacing-2: 0.125rem;
+  --spacing-25: 1.5625rem;
+  --spacing-175: 10.9375rem;
+  --spacing-50: 3.125rem;
+  --spacing-60: 3.75rem;
+  --spacing-64: 4rem;
+  --spacing-73: 4.5625rem;
+  --spacing-120: 7.5rem;
+  --spacing-170: 10.625rem;
+  --spacing-180: 11.25rem;
+  --size-page-max: 80rem;
+  --size-logo-width: 12.1875rem;
+  --size-logo-height: 2.375rem;
+  --size-logo-mobile-width: 7.6875rem;
+  --size-logo-mobile-height: 1.5rem;
+  --size-search-mobile-height: 2.75rem;
+  --size-search-max: 26.875rem;
+  --size-login-bar-width: 22.25rem;
+  --size-login-bar-height: 11.5625rem;
+  --size-login-services: 15.125rem;
+  --size-login-button: 12.5rem;
+  --size-calendar-main: 22.25rem;
+  --size-calendar-flow: 20.5rem;
+  --size-calendar-cell: 2.75rem;
+  --size-calendar-today: 2.125rem;
+  --size-card-main-width: 13.5rem;
+  --size-card-service-width: 12.3rem;
+  --size-banner-height: 10.4375rem;
+  --size-banner-mobile-height: 19.4375rem;
+  --size-notice-list: 20.5rem;
+  --size-popular-tab: 7.6875rem;
+  --size-tabs-width: 48.75rem;
+  --size-action-bar: 4.375rem;
+  --size-action-button: 22.5rem;
+  --size-action-button-mobile: 10.75rem;
+  --size-step-bar: 28.3125rem;
+  --size-step-bar-mobile: 19.0625rem;
+  --size-content-guide: 61.25rem;
+  --size-content-apply: 48.75rem;
+  --size-content-household: 55rem;
+  --size-content-complete: 57.5rem;
+  --size-content-documents: 39.6875rem;
+  --size-summary-help: 27.375rem;
+  --size-guide-button: 20.5rem;
+  --size-grade-table: 21.375rem;
+  --size-grade-prose: 25.125rem;
+  --size-schedule-prose: 39.75rem;
+  --size-complete-image-width: 36.75rem;
+  --size-complete-image-height: 18.25rem;
+  --size-label-narrow: 2.5rem;
+  --size-label: 4.9375rem;
+  --size-label-medium: 6rem;
+  --size-label-document: 7.375rem;
+  --size-label-wide: 11.1875rem;
+  --size-info-row: 2.5rem;
+  --size-timeline-dot: 1.25rem;
+  --size-timeline-line: 0.25rem;
+  --size-calendar-chevron: 0.625rem;
+  --size-grade-label: 4.375rem;
+  --size-popup-wide: 36.0625rem;
+  --size-popup-medium: 31.4375rem;
+
+  /* 팝업화면(566:2151) 크기: Figma에 변수가 없어 해당 노드의 값으로 정의 */
+  --size-popup-width: 22.5rem;
+  --size-popup-close-top: 1.4375rem;
+  --size-popup-close-right: 1.6875rem;
+  --size-popup-list-indent: 1.59375rem;
+
+  /* 메뉴아이템 크기: Figma에 변수가 없어 메뉴아이템 섹션의 값으로 정의 */
+  --size-menu-item: 5.3125rem;
+  --size-icon-menu-width: 3.8125rem;
+  --size-icon-menu-height: 3.75rem;
+  --size-icon-s: 1.5rem;
+
+  /* 카드 크기: 모바일 높이는 Figma 변수 H, 나머지는 카드아이템 섹션의 값 */
+  --size-card-mobile-height: 10.125rem;
+  --size-card-desktop-height: 16.625rem;
+  --size-card-service-height: 14.875rem;
+  --size-card-image: 5.9375rem;
+  --size-card-service-image-height: 5.8125rem;
+  --size-card-keywords-height: 1.8125rem;
+
+  /* 아이콘 섹션(566:2884)의 크기 */
+  --size-icon-category: 2rem;
+  --size-icon-plus: 1.25rem;
+  --size-agree-button: 1.75rem;
+  --size-touch-target: 2.75rem;
+  --size-chatbot-width: 3.4375rem;
+  --size-chatbot-height: 3.75rem;
+  --size-chatbot-guide-height: 3.125rem;
+  --size-chatbot-guide-closed: 2.75rem;
+  --size-chatbot-guide-open: 9.625rem;
+  --size-step-thumb: 1.25rem;
+  --size-step-track: 0.375rem;
+  --size-step-label-space: 1.5rem;
+
+  /* 테두리 두께: Figma에 변수가 없어 메뉴아이템 섹션의 값으로 정의 */
+  --border-width-thin: 0.5px;
+  --border-width-default: 1px;
+  --border-width-thick: 3px;
+
+  /* 라운드 (레디우스값) */
+  --radius-s: 4px;
+  --radius-m: 10px;
+  --radius-l: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+
+  /* 그림자 (이펙트 스타일) */
+  --shadow-default: 2px 4px 10px 0 #0000001a;
+  --shadow-with-glass: 0 4px 10px 0 #0000001a;
+  --shadow-border: 0 0 8px 0 #00000005, 0 4px 12px 0 #00000014;
+
+  /* 글래스 이펙트 반경: CSS에 똑같은 효과가 없어 Figma 숫자만 보관 */
+  --effect-glass-radius: 56px;
+}
+
+/* 텍스트 컬렉션의 데스크탑 모드에서 값이 다른 토큰 */
+@media (min-width: 1280px) {
+  :root {
+    --font-size-display-l: var(--font-size-60);
+    --font-size-display-m: var(--font-size-44);
+    --font-size-display-s: var(--font-size-36);
+    --font-size-h1: var(--font-size-40);
+    --font-size-h2: var(--font-size-32);
+    --font-size-h3: var(--font-size-24);
+  }
+}

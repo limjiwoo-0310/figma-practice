@@ -1,0 +1,21 @@
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font: var(--font-heading-h4-default);
+  letter-spacing: normal;
+  color: var(--color-text-subtitle);
+  text-align: left;
+  text-decoration: none;
+}
+
+.category__title {
+  padding: var(--spacing-16);
+}
+
+.category__icon {
+  flex: none;
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}

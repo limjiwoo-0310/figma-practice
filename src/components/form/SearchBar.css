@@ -1,0 +1,98 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.search-bar {
+  display: flex;
+  gap: var(--spacing-8);
+  align-items: center;
+  width: 100%;
+  min-height: var(--size-search-mobile-height);
+  padding: var(--spacing-8) var(--spacing-16);
+  background-color: var(--color-b-50);
+  border: var(--border-width-default) solid var(--color-primary);
+  border-radius: var(--radius-2xl);
+}
+
+.search-bar__category {
+  position: relative;
+  display: block;
+  flex: none;
+  width: var(--size-search-category);
+}
+
+/* 브라우저 기본 화살표를 지우고 Figma의 삼각형 아이콘을 겹쳐 놓는다. */
+.search-bar__select {
+  width: 100%;
+  min-height: var(--size-icon-s);
+  padding-right: var(--size-icon-s);
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-title);
+  appearance: none;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+/* 삼각형을 눌러도 아래의 목록이 열리도록 클릭을 통과시킨다. */
+.search-bar__arrow.direction-icon--category {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.search-bar__divider {
+  flex: none;
+  width: var(--border-width-default);
+  height: var(--size-search-divider);
+  background-color: var(--color-line);
+}
+
+.search-bar__input {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0;
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-body);
+  background: none;
+  border: 0;
+}
+
+.search-bar__input::placeholder {
+  color: var(--color-g-400);
+  opacity: 1;
+}
+
+.search-bar__submit {
+  position: relative;
+  flex: none;
+}
+
+/* 보이는 크기는 Figma대로 두고, 누르는 영역만 2.75rem(44px)까지 넓힌다. */
+.search-bar__submit::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--size-touch-target);
+  height: var(--size-touch-target);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1280px) {
+  .search-bar {
+    max-width: var(--size-search-max);
+    border-width: calc(var(--border-width-default) * 2);
+  }
+
+  .search-bar__select {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .search-bar__input::placeholder {
+    font-weight: var(--font-weight-bold);
+  }
+}

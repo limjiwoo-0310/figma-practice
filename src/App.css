@@ -1,0 +1,14 @@
+/* 값은 tokens.css 변수만 쓴다. 챗봇은 모든 화면의 오른쪽 아래에 떠 있다. */
+.app__chatbot {
+  position: fixed;
+  right: var(--spacing-10);
+  bottom: var(--spacing-73);
+  z-index: 2;
+}
+
+@media (min-width: 1280px) {
+  .app__chatbot {
+    right: var(--spacing-73);
+    bottom: var(--spacing-50);
+  }
+}

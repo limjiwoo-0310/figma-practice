@@ -1,0 +1,6 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.menu-button {
+  display: inline-flex;
+  gap: var(--spacing-6);
+  align-items: center;
+}

@@ -1,0 +1,19 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.page-info-heading {
+  padding: var(--spacing-16);
+  font: var(--font-heading-h4-default);
+  color: var(--color-text-subtitle);
+  border-bottom: var(--border-width-thin) solid var(--color-line);
+}
+
+@media (min-width: 1280px) {
+  .page-info-heading--section {
+    font: var(--font-heading-h4);
+  }
+
+  .page-info-heading--page {
+    padding: 0;
+    font: var(--font-weight-bold) var(--font-size-32) / var(--line-height-auto) var(--font-family-pretendard-gov);
+    border-bottom: 0;
+  }
+}

@@ -1,0 +1,15 @@
+.site-icon {
+  flex: none;
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}
+
+.site-icon--plus {
+  width: var(--size-icon-plus);
+  height: var(--size-icon-plus);
+}
+
+.site-icon--external-meta {
+  width: var(--size-icon-external);
+  height: var(--size-icon-external);
+}

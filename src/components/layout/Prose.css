@@ -1,0 +1,45 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.prose {
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-body);
+}
+
+.prose strong {
+  display: block;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Figma의 빈 줄 한 칸만큼 띄운다. */
+.prose__gap {
+  margin-top: var(--line-height-body-m);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: var(--size-popup-list-indent);
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose__note {
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+}
+
+.prose__note--bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.prose__title {
+  font: var(--font-heading-h4);
+  letter-spacing: normal;
+}
+
+@media (min-width: 1280px) {
+  .prose__note--bold-desktop {
+    font-weight: var(--font-weight-bold);
+  }
+}

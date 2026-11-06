@@ -1,0 +1,31 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.status-badge {
+  flex: none;
+  padding: var(--spacing-4) var(--spacing-8);
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  white-space: nowrap;
+  border: var(--border-width-default) solid transparent;
+  border-radius: var(--radius-s);
+}
+
+.status-badge--closing {
+  color: var(--color-w-900);
+  background-color: var(--color-point);
+}
+
+.status-badge--open {
+  color: var(--color-w-900);
+  background-color: var(--color-primary);
+}
+
+.status-badge--upcoming {
+  color: var(--color-primary-hover);
+  background-color: var(--color-w-900);
+  border-color: var(--color-primary-hover);
+}
+
+.status-badge--closed {
+  color: var(--color-text-body);
+  background-color: var(--color-line);
+}

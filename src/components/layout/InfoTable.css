@@ -1,0 +1,87 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.info-table {
+  width: 100%;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-body);
+}
+
+.info-table__row {
+  display: flex;
+}
+
+.info-table__cell {
+  display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.info-table__label,
+.info-table__value {
+  display: flex;
+  align-items: center;
+  min-height: var(--size-info-row);
+  padding-block: var(--spacing-2);
+  border: var(--border-width-thin) solid var(--color-line);
+}
+
+.info-table--compact .info-table__label,
+.info-table--compact .info-table__value {
+  min-height: auto;
+}
+
+.info-table__label {
+  flex: none;
+  justify-content: center;
+  width: var(--size-label);
+  text-align: center;
+  background-color: var(--color-bg-page);
+}
+
+.info-table__label--narrow {
+  width: var(--size-label-narrow);
+}
+
+.info-table__label--medium {
+  width: var(--size-label-medium);
+}
+
+.info-table__label--document {
+  width: var(--size-label-document);
+}
+
+.info-table__value {
+  flex: 1 1 0;
+  white-space: pre-line;
+  min-width: 0;
+  padding-inline: var(--spacing-16);
+}
+
+.info-table__value--tight {
+  justify-content: center;
+  padding-inline: 0;
+}
+
+@media (min-width: 1280px) {
+  .info-table--compact .info-table__label,
+  .info-table--compact .info-table__value {
+    min-height: var(--size-info-row);
+  }
+
+  .info-table__label--narrow {
+    width: var(--size-label);
+  }
+
+  .info-table__label--medium {
+    width: var(--size-label-wide);
+  }
+
+  .info-table__value--tight {
+    justify-content: flex-start;
+    padding-inline: var(--spacing-16);
+  }
+
+  .info-table__cell {
+    flex: 1 1 0;
+  }
+}

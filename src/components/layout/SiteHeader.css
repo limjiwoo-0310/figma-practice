@@ -1,0 +1,54 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.site-header--desktop-only {
+  display: none;
+}
+
+.site-header__links {
+  display: none;
+}
+
+.site-header__bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-16);
+}
+
+.site-header__logo {
+  display: block;
+}
+
+.site-header__logo img {
+  width: var(--size-logo-mobile-width);
+  height: var(--size-logo-mobile-height);
+  object-fit: cover;
+}
+
+@media (min-width: 1280px) {
+  .site-header,
+  .site-header--desktop-only {
+    display: block;
+    width: 100%;
+    max-width: var(--size-page-max);
+    padding-inline: var(--spacing-80);
+    margin-inline: auto;
+  }
+
+  .site-header__links {
+    display: block;
+    padding-block: var(--spacing-8);
+  }
+
+  .site-header__bar {
+    padding: 0;
+  }
+
+  .site-header__logo img {
+    width: var(--size-logo-width);
+    height: var(--size-logo-height);
+  }
+
+  .site-header__menu {
+    display: none;
+  }
+}

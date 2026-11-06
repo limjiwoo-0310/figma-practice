@@ -1,0 +1,18 @@
+.icon-menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-4);
+  align-items: center;
+  width: var(--size-menu-item);
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-menu);
+  text-align: center;
+  text-decoration: none;
+}
+
+@media (min-width: 1280px) {
+  .icon-menu {
+    font-weight: var(--font-weight-bold);
+  }
+}

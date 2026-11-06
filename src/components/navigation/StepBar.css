@@ -1,0 +1,109 @@
+.step-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  width: 100%;
+}
+
+.step-bar__count {
+  font: var(--font-body-m-b);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-body);
+}
+
+.step-bar__steps {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+}
+
+/* 단계 이름은 동그라미 아래에 떠 있으므로, 그만큼 자리를 비워 둔다. */
+.step-bar--labeled .step-bar__steps {
+  margin-bottom: var(--size-step-label-space);
+}
+
+/* 동그라미들을 잇는 회색 막대 */
+.step-bar__steps::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: var(--size-step-track);
+  content: '';
+  background-color: var(--color-g-100);
+  border-radius: calc(var(--size-step-track) / 2);
+  transform: translateY(-50%);
+}
+
+.step-bar__step {
+  position: relative;
+  flex: none;
+  width: var(--size-step-thumb);
+  height: var(--size-step-thumb);
+}
+
+.step-bar__thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 파란 동그라미를 회색 위에 겹쳐 두고, 현재 단계에서만 서서히 보이게 한다. */
+.step-bar__thumb--current {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.step-bar__step--current .step-bar__thumb--current {
+  opacity: 1;
+}
+
+.step-bar__label {
+  position: absolute;
+  top: calc(100% + var(--spacing-4));
+  left: 50%;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-meta);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* 맨 앞과 맨 뒤의 글자가 바 밖으로 나가지 않게 끝에 맞춘다. */
+.step-bar__step:first-child .step-bar__label {
+  left: 0;
+  transform: none;
+}
+
+.step-bar__step:last-child .step-bar__label {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+.step-bar__step--current .step-bar__label {
+  font: var(--font-footer-body);
+  font-size: var(--font-size-body-s);
+  color: var(--color-text-body);
+}
+
+/* 화면에는 숨기고 화면 읽기 프로그램에만 읽어 준다. */
+.step-bar__hidden-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-bar__thumb--current {
+    transition: none;
+  }
+}

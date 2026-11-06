@@ -1,0 +1,19 @@
+.top-menu-button-desktop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-button);
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-text-menu);
+}
+
+.top-menu-button-desktop--active {
+  color: var(--color-primary-hover);
+}
+
+.top-menu-button-desktop__icon {
+  flex: none;
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}

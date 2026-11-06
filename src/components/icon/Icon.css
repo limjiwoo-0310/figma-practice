@@ -1,0 +1,14 @@
+.icon {
+  flex: none;
+  object-fit: contain;
+}
+
+.icon--default {
+  width: var(--size-icon-menu-width);
+  height: var(--size-icon-menu-height);
+}
+
+.icon--small {
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}

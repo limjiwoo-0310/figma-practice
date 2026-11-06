@@ -1,0 +1,36 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.action-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  gap: var(--spacing-16);
+  background-color: var(--color-w-900);
+}
+
+.action-bar > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (min-width: 1280px) {
+  .action-bar {
+    gap: var(--spacing-24);
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    min-height: var(--size-action-bar);
+    padding-inline: var(--spacing-80);
+  }
+
+  /* 흰 배경은 화면 끝까지 채우고, 버튼은 가운데 1280px 안의 위치를 지킨다. */
+  .action-bar--end {
+    justify-content: flex-end;
+    padding-inline: max(var(--spacing-175), calc((100% - var(--size-page-max)) / 2 + var(--spacing-175)));
+  }
+
+  .action-bar > * {
+    flex: none;
+    width: var(--size-action-button);
+  }
+}

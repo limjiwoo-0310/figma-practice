@@ -1,0 +1,510 @@
+/* 신청가이드와 신청서 작성 화면의 공통 레이아웃. 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.flow__only-desktop {
+  display: none;
+}
+
+/* 내용이 짧아도 아래 버튼이 화면 맨 아래에 오도록 본문을 늘린다. */
+.flow {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+}
+
+.flow > main {
+  flex: 1 0 auto;
+}
+
+.flow__location {
+  padding: var(--spacing-16);
+}
+
+.flow__tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--spacing-2);
+  padding: var(--spacing-16) var(--spacing-12);
+}
+
+.flow__steps {
+  width: auto;
+  max-width: var(--size-step-bar-mobile);
+  padding: var(--spacing-16) 0 0;
+  margin-inline: auto;
+}
+
+.flow__title-text > .page-info-title {
+  margin-bottom: 0;
+}
+
+.flow__heading,
+.flow__page-heading {
+  padding: var(--spacing-16);
+}
+
+.flow__panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  padding: var(--spacing-20) var(--spacing-16);
+  background-color: var(--color-bg-page);
+}
+
+/* 일정 흐름선: 동그라미와 선이 카드들을 잇는다. */
+.flow-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+}
+
+.flow-timeline::before {
+  position: absolute;
+  top: calc(100% / 6);
+  bottom: calc(100% / 6);
+  left: var(--spacing-32);
+  z-index: 1;
+  width: var(--size-timeline-line);
+  content: '';
+  background-color: var(--color-line);
+  transform: translateX(-50%);
+}
+
+.flow-timeline__item {
+  position: relative;
+}
+
+.flow-timeline__item::before {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-32);
+  z-index: 1;
+  width: var(--size-timeline-dot);
+  height: var(--size-timeline-dot);
+  content: '';
+  background-color: var(--color-line);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flow-help {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.flow-help--desktop {
+  display: none;
+}
+
+.flow__help-mobile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  padding-block: var(--spacing-16) var(--spacing-60);
+}
+
+.flow__help-mobile .flow-help {
+  padding-inline: var(--spacing-16);
+}
+
+.flow-schedule__row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-32);
+}
+
+.flow-schedule__calendar {
+  margin-block: var(--spacing-32) 0;
+  border-radius: var(--radius-s);
+}
+
+.flow-schedule__detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+}
+
+.flow__prose {
+  padding-inline: var(--spacing-16);
+}
+
+/* 앞의 표나 글과 다음 구역 제목 사이를 띄운다. */
+.flow--apply .flow__content + .flow__heading {
+  margin-top: var(--spacing-16);
+}
+
+.flow__panel--eligibility {
+  gap: var(--spacing-24);
+}
+
+.flow-eligibility__prose {
+  order: -1;
+  padding-inline: var(--spacing-16);
+  word-break: keep-all;
+}
+
+.flow__content {
+  display: flex;
+  flex-direction: column;
+  padding-inline: var(--spacing-16);
+}
+
+.flow__content--agreement {
+  gap: var(--spacing-24);
+  padding-block: var(--spacing-20) var(--spacing-60);
+}
+
+.flow__agreements {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  align-items: flex-start;
+  padding-inline: var(--spacing-16);
+}
+
+.flow__field-label {
+  font: var(--font-weight-regular) var(--font-size-19) / var(--line-height-auto) var(--font-family-pretendard-gov);
+  color: var(--color-text-subtitle);
+}
+
+.flow__content--school {
+  gap: var(--spacing-20);
+  padding-block: var(--spacing-30);
+}
+
+.flow__content--income {
+  gap: var(--spacing-8);
+  padding-bottom: var(--spacing-60);
+}
+
+.flow__guide-button {
+  width: 100%;
+  max-width: var(--size-guide-button);
+}
+
+.flow__content--household {
+  gap: var(--spacing-24);
+  padding-block: var(--spacing-24) var(--spacing-60);
+}
+
+.flow__documents-status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+  align-items: flex-end;
+  padding: var(--spacing-16);
+}
+
+.flow__complete-image img {
+  width: 100%;
+  padding: var(--spacing-16) var(--spacing-16) 0;
+}
+
+.flow__complete-prose {
+  padding: var(--spacing-16) var(--spacing-16) var(--spacing-60);
+}
+
+.flow__checks {
+  padding-left: var(--spacing-16);
+  list-style: decimal;
+}
+
+.prose .flow__checks strong {
+  font-weight: var(--font-weight-regular);
+}
+
+.prose .flow__checks ul {
+  padding-left: var(--spacing-10);
+}
+
+.flow__updated {
+  padding: var(--spacing-8) var(--spacing-16) 0;
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-meta);
+}
+
+.flow__agreement {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.flow__agreement-error {
+  padding-left: var(--spacing-32);
+  font: var(--font-body-s);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-point);
+}
+
+@media (min-width: 1280px) {
+  .prose .flow__checks strong {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .flow__checks > li::marker {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .flow__updated {
+    padding: 0;
+  }
+
+  .flow__only-mobile {
+    display: none;
+  }
+
+  .flow__only-desktop {
+    display: inline;
+  }
+
+  .flow__location {
+    padding: var(--spacing-8) var(--spacing-80);
+    margin-top: var(--spacing-24);
+    border-block: var(--border-width-thin) solid var(--color-line);
+  }
+
+  .flow__title {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+    width: 100%;
+    max-width: var(--size-page-max);
+    padding: var(--spacing-25) var(--spacing-120) var(--spacing-16);
+    margin-inline: auto;
+  }
+
+  .flow__title--guide {
+    border-bottom: var(--border-width-thin) solid var(--color-line);
+  }
+
+  .flow__title-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+  }
+
+  /* 데스크탑의 진행 표시는 제목 오른쪽 위에 놓인다. */
+  .flow__steps {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--size-step-bar);
+    max-width: none;
+    padding: var(--spacing-25) 0 0;
+    margin: 0;
+  }
+
+  .flow__page-heading {
+    padding: 0;
+  }
+
+  .flow__heading {
+    padding-inline: 0;
+  }
+
+  .flow__title--complete {
+    padding-bottom: 0;
+  }
+
+  /* 완성본의 단계 제목은 번호 목록이라 조금 들여써 있다. */
+  .flow__title--apply .flow__page-heading {
+    padding-left: var(--spacing-10);
+  }
+
+  .flow--apply .flow__content + .flow__heading {
+    margin-top: var(--spacing-32);
+  }
+
+  .flow__tabs {
+    width: 100%;
+    max-width: var(--size-tabs-width);
+    padding: var(--spacing-16) 0;
+    margin-inline: auto;
+  }
+
+  .flow__heading {
+    max-width: var(--size-page-max);
+    padding-block: var(--spacing-16);
+    margin-inline: auto;
+  }
+
+  .flow__heading--guide {
+    padding-inline: var(--spacing-120);
+  }
+
+  .flow__heading--apply {
+    padding-inline: var(--spacing-180);
+  }
+
+  .flow__heading--household {
+    padding-inline: var(--spacing-170);
+  }
+
+  .flow--apply .flow__heading,
+  .flow__heading--plain {
+    border-bottom: 0;
+  }
+
+  .flow__panel {
+    align-items: center;
+    padding-inline: 0;
+  }
+
+  .flow__panel--summary {
+    gap: var(--spacing-24);
+    padding-block: var(--spacing-64);
+  }
+
+  .flow-timeline {
+    flex-direction: row;
+    gap: var(--spacing-20);
+    width: 100%;
+    max-width: var(--size-content-guide);
+    padding-top: var(--spacing-24);
+  }
+
+  .flow-timeline::before {
+    top: 0;
+    right: calc(100% / 6);
+    bottom: auto;
+    left: calc(100% / 6);
+    width: auto;
+    height: var(--size-timeline-line);
+    transform: translateY(-50%);
+  }
+
+  .flow-timeline__item {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .flow-timeline__item::before {
+    top: calc(var(--spacing-24) * -1);
+    left: 50%;
+  }
+
+  .flow-help--desktop {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-24);
+    justify-content: center;
+    width: 100%;
+  }
+
+  .flow-help--desktop > * {
+    width: var(--size-summary-help);
+  }
+
+  .flow__help-mobile {
+    display: none;
+  }
+
+  .flow-schedule__row {
+    flex-direction: row;
+    gap: var(--spacing-16);
+    align-items: flex-start;
+    width: 100%;
+    max-width: var(--size-content-guide);
+  }
+
+  .flow-schedule__calendar {
+    flex: none;
+    margin-block: 0;
+    width: var(--size-calendar-flow);
+  }
+
+  .flow-schedule__detail {
+    flex: 1 1 0;
+    gap: var(--spacing-16);
+    min-width: 0;
+  }
+
+  .flow-schedule__notes {
+    width: 100%;
+    max-width: var(--size-content-guide);
+    padding-inline: 0;
+  }
+
+  .flow__panel--eligibility {
+    flex-direction: row;
+    gap: var(--spacing-24);
+    justify-content: center;
+  }
+
+  .flow-eligibility__table {
+    flex: none;
+    width: var(--size-grade-table);
+  }
+
+  .flow-eligibility__prose {
+    flex: none;
+    order: 0;
+    width: var(--size-grade-prose);
+  }
+
+  .flow__panel--documents .flow__prose {
+    width: 100%;
+    max-width: var(--size-content-apply);
+  }
+
+  .flow__content {
+    width: 100%;
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+
+  .flow__content--apply {
+    max-width: var(--size-content-apply);
+  }
+
+  .flow__content--agreement {
+    padding-block: var(--spacing-20) var(--spacing-120);
+  }
+
+  .flow__content--school {
+    padding-block: var(--spacing-30);
+  }
+
+  .flow__content--household {
+    max-width: var(--size-content-household);
+    padding-block: 0 var(--spacing-120);
+  }
+
+  .flow__documents-status {
+    align-items: flex-end;
+    width: 100%;
+    max-width: var(--size-content-documents);
+    padding: var(--spacing-16) 0;
+    margin-inline: auto;
+  }
+
+  .flow__prose--flush {
+    padding-inline: 0;
+  }
+
+  .flow__documents-status .info-table__label {
+    width: var(--size-label-document);
+  }
+
+  .flow__complete-image {
+    display: flex;
+    justify-content: center;
+    padding-block: var(--spacing-24) var(--spacing-16);
+  }
+
+  .flow__complete-image img {
+    width: var(--size-complete-image-width);
+    height: var(--size-complete-image-height);
+    padding: 0;
+  }
+
+  .flow__complete-prose {
+    width: 100%;
+    max-width: var(--size-content-complete);
+    padding: var(--spacing-40) 0 var(--spacing-120);
+    margin-inline: auto;
+  }
+}

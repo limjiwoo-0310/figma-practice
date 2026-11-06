@@ -1,0 +1,41 @@
+.login-bar-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-8);
+  align-items: center;
+  justify-content: center;
+  min-height: var(--size-login-bar-height);
+  padding-inline: var(--spacing-16);
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-with-glass);
+}
+
+.login-bar-desktop__message {
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-text-subtitle);
+  text-align: center;
+  text-wrap: balance;
+  word-break: keep-all;
+}
+
+.login-bar-desktop__services {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: var(--spacing-8);
+  justify-content: space-between;
+  width: var(--size-login-services);
+}
+
+.login-bar-desktop__service {
+  display: flex;
+  align-items: center;
+  font: var(--font-footer-body);
+  letter-spacing: normal;
+  color: var(--color-text-menu);
+}
+
+.login-bar-desktop__button {
+  width: var(--size-login-button);
+}

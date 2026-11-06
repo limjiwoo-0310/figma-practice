@@ -1,0 +1,48 @@
+/* 태그 기본 스타일. 색상과 폰트는 tokens.css 변수만 쓴다. */
+body {
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-body);
+  background-color: var(--color-w-900);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
+  color: var(--color-text-title);
+}
+
+h1 {
+  font: var(--font-heading-h1);
+}
+
+h2 {
+  font: var(--font-heading-h2);
+}
+
+h3 {
+  font: var(--font-heading-h3);
+}
+
+h4 {
+  font: var(--font-heading-h4);
+}
+
+/* Figma에 H6 스타일이 없어 H5와 같게 둔다. */
+h5,
+h6 {
+  font: var(--font-heading-h5);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}

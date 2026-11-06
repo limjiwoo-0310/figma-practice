@@ -1,0 +1,21 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.schedule-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-12);
+  width: 100%;
+  max-width: var(--size-content-guide);
+}
+
+.schedule-skeleton__message {
+  font: var(--font-body-m);
+  letter-spacing: var(--letter-spacing-body-m);
+  color: var(--color-text-body);
+  text-align: center;
+}
+
+.schedule-skeleton__block {
+  height: var(--size-skeleton-block);
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-s);
+}

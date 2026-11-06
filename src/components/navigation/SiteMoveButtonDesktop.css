@@ -1,0 +1,37 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.site-move-button-desktop__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.site-move-button-desktop__item {
+  padding-inline: var(--spacing-8);
+}
+
+.site-move-button-desktop__item:not(:last-child) {
+  border-right: var(--border-width-default) solid var(--color-line);
+}
+
+.site-move-button-desktop__link {
+  display: flex;
+  gap: var(--spacing-5);
+  align-items: center;
+  font: var(--font-footer-meta);
+  letter-spacing: normal;
+  color: var(--color-text-meta);
+  text-decoration: none;
+}
+
+.site-move-button-desktop__mini-icon {
+  flex: none;
+  width: var(--size-icon-mini);
+  height: var(--size-icon-mini);
+}
+
+@media (min-width: 1280px) {
+  .site-move-button-desktop__link {
+    font-weight: var(--font-weight-bold);
+  }
+}

@@ -1,0 +1,38 @@
+/* 값은 tokens.css 변수만 쓴다. 기본은 모바일이고 1280px부터 데스크탑이다. */
+.notice-box__tabs {
+  display: flex;
+  align-items: center;
+  border-bottom: var(--border-width-thin) solid var(--color-line);
+}
+
+.notice-box__list {
+  padding-inline: var(--spacing-16);
+}
+
+.notice-box__item {
+  overflow: hidden;
+  padding-block: var(--spacing-16);
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  color: var(--color-text-body);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-bottom: var(--border-width-thin) solid var(--color-line);
+}
+
+@media (min-width: 1280px) {
+  .notice-box {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-16);
+    padding: var(--spacing-24);
+    background-color: var(--color-w-900);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow-border);
+  }
+
+  .notice-box__list {
+    width: var(--size-notice-list);
+    padding-inline: 0;
+  }
+}

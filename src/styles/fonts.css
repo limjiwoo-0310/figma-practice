@@ -1,0 +1,27 @@
+/*
+ * Pretendard GOV 웹폰트 (파일: src/fonts)
+ * 디자인 토큰에 있는 굵기(400, 500, 700)만 등록한다.
+ */
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/PretendardGOV-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/PretendardGOV-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard GOV';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/PretendardGOV-Bold.woff2') format('woff2');
+}

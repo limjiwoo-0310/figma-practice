@@ -1,0 +1,27 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.footer-popup-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-12) var(--spacing-20);
+  font: var(--font-footer-meta);
+  letter-spacing: normal;
+  color: var(--color-text-subtitle);
+  background-color: var(--color-w-900);
+  border: var(--border-width-default) solid var(--color-line);
+}
+
+/* 플러스 아이콘의 기본 크기는 20px이지만 이 버튼 안에서는 Figma대로 24px로 쓴다. */
+.footer-popup-button__icon.site-icon--plus {
+  width: var(--size-icon-s);
+  height: var(--size-icon-s);
+}
+
+@media (min-width: 1280px) {
+  .footer-popup-button {
+    min-height: var(--size-button-category);
+    font: var(--font-footer-body);
+    border-width: var(--border-width-thin);
+  }
+}

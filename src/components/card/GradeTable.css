@@ -1,0 +1,43 @@
+/* 값은 tokens.css 변수만 쓴다. */
+.grade-table {
+  padding: var(--spacing-20);
+  background-color: var(--color-w-900);
+  border-radius: var(--radius-s);
+  box-shadow: var(--shadow-border);
+}
+
+.grade-table__table {
+  width: 100%;
+  table-layout: fixed;
+  color: var(--color-text-menu);
+}
+
+.grade-table__table thead th {
+  padding-bottom: var(--spacing-8);
+  font: var(--font-body-m-b);
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.grade-table__table thead th:first-child {
+  width: var(--size-grade-label);
+}
+
+.grade-table__table tbody th,
+.grade-table__table tbody td {
+  padding-block: var(--spacing-10);
+  font: var(--font-body-s);
+  letter-spacing: var(--letter-spacing-body-s);
+  white-space: pre-line;
+}
+
+.grade-table__table tbody th {
+  text-align: center;
+  word-break: keep-all;
+  border-right: var(--border-width-thin) solid var(--color-line);
+}
+
+.grade-table__table tbody td {
+  padding-left: var(--spacing-12);
+  word-break: keep-all;
+}
