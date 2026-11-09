@@ -4,8 +4,8 @@ import './NoticeBox.css'
 
 /**
  * Figma 공지사항 상자. 위쪽 탭과 아래쪽 글 목록이다.
- * tabs: 탭 이름 목록. 탭별 글은 아직 없어 같은 목록을 보여 준다.
- * notices: 글 제목 목록
+ * tabs: 탭 이름 목록
+ * notices: 탭 이름별 글 제목 목록. 예: { 공지사항: ['제목', ...] }
  * 너비는 감싸는 부모가 정한다.
  */
 function NoticeBox({ tabs, notices, className = '', ...props }) {
@@ -21,7 +21,7 @@ function NoticeBox({ tabs, notices, className = '', ...props }) {
         ))}
       </div>
       <ul className="notice-box__list">
-        {notices.map((notice, index) => (
+        {(notices[activeTab] ?? []).map((notice, index) => (
           <li className="notice-box__item" key={`${notice}-${index}`}>
             {notice}
           </li>

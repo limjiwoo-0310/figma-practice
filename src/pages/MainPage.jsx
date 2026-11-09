@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import bannerDesktop from '../assets/images/banner-bg.png'
 import bannerMobile from '../assets/images/banner-bg-mobile.jpg'
+import loanImage from '../assets/images/menu-loan.png'
 import FooterPopupButton from '../components/button/FooterPopupButton.jsx'
 import Calendar from '../components/card/Calendar.jsx'
 import CardItem from '../components/card/CardItem.jsx'
@@ -15,6 +16,7 @@ import MenuBarDesktop from '../components/navigation/MenuBarDesktop.jsx'
 import PopularMenu from '../components/navigation/PopularMenu.jsx'
 import {
   CALENDAR_EXAMPLE,
+  LOAN_CARDS,
   NOTICES,
   POPULAR_MENUS,
   SCHOLARSHIP_CARDS,
@@ -24,14 +26,22 @@ import { useNow } from '../hooks/useNow.js'
 import { getScheduleStatus } from '../utils/schedule.js'
 import './MainPage.css'
 
-const SCHOLARSHIP_TABS = ['장학금 신청', '학자금대출']
+// 탭별 카드 목록. image를 넘기지 않으면 CardItem의 기본 이미지(장학금 아이콘)를 쓴다.
+const TAB_CONTENTS = {
+  '장학금 신청': { cards: SCHOLARSHIP_CARDS, empty: '지금 신청할 수 있는 장학금이 없습니다.' },
+  학자금대출: { cards: LOAN_CARDS, image: loanImage, empty: '지금 신청할 수 있는 학자금대출이 없습니다.' },
+}
+const SCHOLARSHIP_TABS = Object.keys(TAB_CONTENTS)
 
 function MainPage() {
   const [popularMenu, setPopularMenu] = useState(POPULAR_MENUS[0])
   const [scholarshipTab, setScholarshipTab] = useState(SCHOLARSHIP_TABS[0])
   const now = useNow()
-  const openCards = SCHOLARSHIP_CARDS.filter(({ schedule }) => getScheduleStatus(schedule, now).key !== 'closed')
-  const emptyCards = openCards.length === 0 && <p className="main-page__empty">지금 신청할 수 있는 장학금이 없습니다.</p>
+  const tabContent = TAB_CONTENTS[scholarshipTab]
+  const openCards = tabContent.cards
+    .filter(({ schedule }) => getScheduleStatus(schedule, now).key !== 'closed')
+    .map((card) => (tabContent.image ? { image: tabContent.image, ...card } : card))
+  const emptyCards = openCards.length === 0 && <p className="main-page__empty">{tabContent.empty}</p>
 
   const scholarshipTabs = (
     <div className="main-page__tabs">

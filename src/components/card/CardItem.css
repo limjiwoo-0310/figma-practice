@@ -118,6 +118,7 @@
 
 .card-item--mobile .card-item__description {
   -webkit-line-clamp: 2;
+  line-clamp: 2;
 }
 
 @media (min-width: 1280px) {
@@ -134,10 +135,14 @@
   word-break: normal;
 }
 
-.card-item--service .card-item__title {
-  display: -webkit-box;
-  white-space: normal;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+/*
+ * 자주찾는 서비스 카드: 제목 1줄, 설명 2줄까지 보여 주고 넘치면 ...으로 줄인다.
+ * 키워드는 글 길이와 상관없이 항상 카드 맨 아래 같은 위치에 둔다.
+ */
+.card-item--service .card-item__content {
+  min-height: 0;
+}
+
+.card-item--service .card-item__keywords {
+  margin-top: auto;
 }

@@ -32,7 +32,7 @@
   }
 
   .notice-box__list {
-    width: var(--size-notice-list);
+    width: 100%;
     padding-inline: 0;
   }
 }
