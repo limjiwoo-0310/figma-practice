@@ -1,5 +1,8 @@
 import './LocationIndicator.css'
 
+// '/'로 시작하는 앱 안 주소에 배포 경로(base)를 붙인다.
+const withBase = (href) => (href?.startsWith('/') ? import.meta.env.BASE_URL + href.slice(1) : href)
+
 const DEFAULT_ITEMS = [
   { label: '홈', href: '#' },
   { label: '장학금의 신청 과정입니다', href: '#' },
@@ -22,7 +25,7 @@ function LocationIndicator({ items = DEFAULT_ITEMS, className = '', ...props }) 
                 {label}
               </span>
             ) : (
-              <a className="location-indicator__link" href={href} title={label}>
+              <a className="location-indicator__link" href={withBase(href)} title={label}>
                 <span className="location-indicator__label">{label}</span>
               </a>
             )}
